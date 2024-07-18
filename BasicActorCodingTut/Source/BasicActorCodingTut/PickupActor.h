@@ -19,6 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
 public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float RotationSpeed = 90.0f;

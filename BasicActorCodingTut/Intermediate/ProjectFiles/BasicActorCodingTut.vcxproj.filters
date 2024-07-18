@@ -11,6 +11,7 @@
     <None Include="..\..\Source\BasicActorCodingTutEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -45,6 +46,12 @@
       <Filter>Source\BasicActorCodingTut</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BasicActorCodingTut\PickupActor.h">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BasicActorCodingTut\TUTGameCharacter.cpp">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BasicActorCodingTut\TUTGameCharacter.h">
       <Filter>Source\BasicActorCodingTut</Filter>
     </ClInclude>
   </ItemGroup>

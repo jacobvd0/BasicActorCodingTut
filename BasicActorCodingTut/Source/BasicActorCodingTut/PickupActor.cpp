@@ -3,6 +3,7 @@
 
 #include "PickupActor.h"
 #include "Components/StaticMeshComponent.h" // for UStaticMeshComponent
+#include "GameFramework/Character.h"
 
 // Sets default values
 APickupActor::APickupActor()
@@ -11,6 +12,7 @@ APickupActor::APickupActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	PickupMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PickupMesh"));
+	PickupMesh->SetCollisionProfileName(FName("OverlapAll"));
 
 	RootComponent = PickupMesh;
 }
@@ -20,6 +22,17 @@ void APickupActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+	Super::NotifyActorBeginOverlap(OtherActor);
+
+	ACharacter* player = Cast<ACharacter>(OtherActor);
+
+	if (IsValid(player)) {
+		Destroy();
+	}
 }
 
 // Called every frame
