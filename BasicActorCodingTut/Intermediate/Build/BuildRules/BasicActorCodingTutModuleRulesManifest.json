@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\s221150\\Documents\\Perforce\\ProgrammingYear1_2024\\s221150\\BasicActorCodingTut\\BasicActorCodingTut\\Source\\BasicActorCodingTut\\BasicActorCodingTut.Build.cs",
+		"C:\\Users\\s221150\\Documents\\Perforce\\ProgrammingYear1_2024\\s221150\\BasicActorCodingTut\\BasicActorCodingTut\\Source\\BasicActorCodingTut.Target.cs",
+		"C:\\Users\\s221150\\Documents\\Perforce\\ProgrammingYear1_2024\\s221150\\BasicActorCodingTut\\BasicActorCodingTut\\Source\\BasicActorCodingTutEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
