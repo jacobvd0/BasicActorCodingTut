@@ -54,5 +54,17 @@
     <ClInclude Include="..\..\Source\BasicActorCodingTut\TUTGameCharacter.h">
       <Filter>Source\BasicActorCodingTut</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BasicActorCodingTut\TUTGamemodeBase.cpp">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BasicActorCodingTut\TUTGamemodeBase.h">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BasicActorCodingTut\TUTGameSaveGame.cpp">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BasicActorCodingTut\TUTGameSaveGame.h">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
