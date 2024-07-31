@@ -1,22 +1,22 @@
-"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.cpp"
+"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.cpp"
 /I "."
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT"
+/I "..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\VerseVMBytecode"
 /I "Runtime\CoreUObject\Public"
 /I "Runtime\CoreUObject\Internal"
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
 /I "Runtime\TraceLog\Public"
 /external:W0
-/external:I "ThirdParty\mimalloc\include"
-/external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\INCLUDE"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/Yc"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h"
-/Fp"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.pch"
-/Fo"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.obj"
-/sourceDependencies "C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.dep.json"
+/external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\INCLUDE"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
+/Yc"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h"
+/Fp"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.pch"
+/Fo"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.obj"
+/sourceDependencies "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\CoreUObject\SharedPCH.CoreUObject.Cpp20.h.dep.json"
 /Zc:inline
 /nologo
 /Oi
@@ -35,6 +35,7 @@
 /D_WINDLL
 /D_DISABLE_EXTENDED_ALIGNED_STORAGE
 /Ob2
+/d2ExtendedWarningInfo
 /Ox
 /Ot
 /GF

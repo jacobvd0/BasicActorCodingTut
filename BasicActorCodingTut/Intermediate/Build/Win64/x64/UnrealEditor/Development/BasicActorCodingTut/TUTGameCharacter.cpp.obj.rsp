@@ -1,11 +1,11 @@
-"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Source\BasicActorCodingTut\TUTGameCharacter.cpp"
-/FI"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
-/FI"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\Definitions.BasicActorCodingTut.h"
-/Yu"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
-/Fp"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.pch"
-/Fo"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.cpp.obj"
-/sourceDependencies "C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.cpp.dep.json"
-@"C:\Users\s221150\Documents\Perforce\ProgrammingYear1_2024\s221150\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\BasicActorCodingTut.Shared.rsp"
+"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Source\BasicActorCodingTut\TUTGameCharacter.cpp"
+/FI"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
+/FI"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\Definitions.BasicActorCodingTut.h"
+/Yu"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.cpp.obj"
+/sourceDependencies "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.cpp.dep.json"
+@"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\BasicActorCodingTut.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
@@ -24,6 +24,7 @@
 /D_WINDLL
 /D_DISABLE_EXTENDED_ALIGNED_STORAGE
 /Ob2
+/d2ExtendedWarningInfo
 /Ox
 /Ot
 /GF
