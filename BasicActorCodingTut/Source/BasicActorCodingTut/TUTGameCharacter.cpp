@@ -2,6 +2,8 @@
 
 
 #include "TUTGameCharacter.h"
+#include "TUTGamemodeBase.h"
+#include "Containers/StringView.h"
 
 // Sets default values
 ATUTGameCharacter::ATUTGameCharacter()
@@ -15,6 +17,15 @@ ATUTGameCharacter::ATUTGameCharacter()
 void ATUTGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ATUTGamemodeBase* gameMode = GetWorld()->GetAuthGameMode<ATUTGamemodeBase>();
+
+	if (IsValid(gameMode)) {
+		bool isDefaultLoc = gameMode->GetLastSavedPlayerLocation() == FVector::ZeroVector;
+		if (!isDefaultLoc) {
+			TeleportTo(gameMode->GetLastSavedPlayerLocation(), GetActorRotation());
+		}
+	}
 	
 }
 
