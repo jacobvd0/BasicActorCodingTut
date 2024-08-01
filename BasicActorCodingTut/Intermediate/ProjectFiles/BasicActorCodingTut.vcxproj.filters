@@ -42,6 +42,12 @@
     <ClInclude Include="..\..\Source\BasicActorCodingTut\BasicActorCodingTut.h">
       <Filter>Source\BasicActorCodingTut</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BasicActorCodingTut\GameSaveTransform.cpp">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BasicActorCodingTut\GameSaveTransform.h">
+      <Filter>Source\BasicActorCodingTut</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BasicActorCodingTut\PickupActor.cpp">
       <Filter>Source\BasicActorCodingTut</Filter>
     </ClCompile>

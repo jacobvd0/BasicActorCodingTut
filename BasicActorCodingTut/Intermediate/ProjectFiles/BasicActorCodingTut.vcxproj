@@ -263,6 +263,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\BasicActorCodingTut\BasicActorCodingTut.h"/>
+    <ClCompile Include="..\..\Source\BasicActorCodingTut\GameSaveTransform.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BasicActorCodingTut\GameSaveTransform.h"/>
     <ClCompile Include="..\..\Source\BasicActorCodingTut\PickupActor.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

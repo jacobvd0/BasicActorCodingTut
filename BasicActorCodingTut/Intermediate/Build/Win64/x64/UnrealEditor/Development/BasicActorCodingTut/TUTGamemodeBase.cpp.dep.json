@@ -670,7 +670,9 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\views\\stileview.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\colors\\scolorblock.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\sspinbox.h",
-            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\sslider.h"
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\sslider.h",
+            "c:\\users\\s221150\\documents\\basicactorcodingtut\\basicactorcodingtut\\source\\basicactorcodingtut\\gamesavetransform.h",
+            "c:\\users\\s221150\\documents\\basicactorcodingtut\\basicactorcodingtut\\intermediate\\build\\win64\\unrealeditor\\inc\\basicactorcodingtut\\uht\\gamesavetransform.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

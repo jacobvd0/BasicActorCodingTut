@@ -20,4 +20,7 @@ public:
 
 	UPROPERTY()
 	FVector LastPlayerLocation = FVector::ZeroVector;
+
+	UPROPERTY()
+	TMap<FString, FTransform> SaveTransformsByName;
 };

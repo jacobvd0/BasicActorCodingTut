@@ -37,6 +37,7 @@
 /FUNCTIONPADMIN:6
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\BasicActorCodingTutEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\BasicActorCodingTut.init.gen.cpp.obj"
+"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\GameSaveTransform.gen.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\PickupActor.gen.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.gen.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGamemodeBase.gen.cpp.obj"
@@ -44,6 +45,7 @@
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\BasicActorCodingTut.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\PickupActor.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameCharacter.cpp.obj"
+"C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\GameSaveTransform.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGamemodeBase.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\TUTGameSaveGame.cpp.obj"
 "C:\Users\s221150\Documents\BasicActorCodingTut\BasicActorCodingTut\Intermediate\Build\Win64\x64\UnrealEditor\Development\BasicActorCodingTut\Default.rc2.res"

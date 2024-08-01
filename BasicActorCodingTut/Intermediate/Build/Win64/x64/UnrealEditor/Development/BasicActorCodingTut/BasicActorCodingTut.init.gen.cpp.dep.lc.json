@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s221150\\documents\\basicactorcodingtut\\basicactorcodingtut\\intermediate\\build\\win64\\unrealeditor\\inc\\basicactorcodingtut\\uht\\basicactorcodingtut.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\s221150\\documents\\basicactorcodingtut\\basicactorcodingtut\\intermediate\\build\\win64\\x64\\basicactorcodingtuteditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\s221150\\documents\\basicactorcodingtut\\basicactorcodingtut\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\basicactorcodingtut\\definitions.basicactorcodingtut.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
