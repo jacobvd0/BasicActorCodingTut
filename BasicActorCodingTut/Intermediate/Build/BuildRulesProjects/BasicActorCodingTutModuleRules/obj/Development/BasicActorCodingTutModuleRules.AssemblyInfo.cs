@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BasicActorCodingTutModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce85f2e3d963f3930d836372c77b7713f4f2498b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57f005bf2db5b5462bd4bc24be805a20a4572107")]
 [assembly: System.Reflection.AssemblyProductAttribute("BasicActorCodingTutModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BasicActorCodingTutModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,7 +31,8 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 	ACharacter* player = Cast<ACharacter>(OtherActor);
 
 	if (IsValid(player)) {
-		Destroy();
+		//Destroy();
+		SetActorHiddenInGame(true);
 	}
 }
 

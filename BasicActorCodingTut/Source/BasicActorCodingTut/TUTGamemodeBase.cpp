@@ -26,7 +26,7 @@ FVector ATUTGamemodeBase::GetLastSavedPlayerLocation()
 
 void ATUTGamemodeBase::BeginPlay()
 {
-	USaveGame* loadSave = UGameplayStatics::LoadGameFromSlot(TEXT("SINGLEPLAYER"), 0);
+	USaveGame* loadSave = UGameplayStatics::LoadGameFromSlot(TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
 	UTUTGameSaveGame* mySave = Cast<UTUTGameSaveGame>(loadSave);
 
 	if (IsValid(mySave)) {
@@ -40,12 +40,12 @@ void ATUTGamemodeBase::BeginPlay()
 				if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
 
 				EWorldType::Type componentWorldType = (*savedTransforms)->GetWorld()->WorldType;
-				//if (!(componentWorldType == EWorldType::PIE || componentWorldType == EWorldType::Game)) { continue; }
+				if (!(componentWorldType == EWorldType::PIE || componentWorldType == EWorldType::Game)) { continue; }
 
 
 				AActor* saveOwner = (*savedTransforms)->GetOwner();
 				FString ownerName = saveOwner->GetName();
-				FTransform * savedTransform = mySave->SaveTransformsByName.Find(ownerName);
+				FTransform* savedTransform = mySave->SaveTransformsByName.Find(ownerName);
 				if (savedTransform != nullptr) {
 					(*savedTransforms)->LoadTransform(mySave->SaveTransformsByName[saveOwner->GetName()]);
 				}
@@ -77,12 +77,12 @@ void ATUTGamemodeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 
 		for (TObjectIterator<UGameSaveTransform> savedTransforms; savedTransforms; ++savedTransforms) {
-			if (IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
+			if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
 
 			AActor* saveOwner = savedTransforms->GetOwner();
 			EWorldType::Type ownerWorldType = saveOwner->GetWorld()->WorldType;
 
-			//if (!(ownerWorldType == EWorldType::PIE || ownerWorldType == EWorldType::Game)) { continue; }
+			if (!(ownerWorldType == EWorldType::PIE || ownerWorldType == EWorldType::Game)) { continue; }
 
 			FString ownerName = saveOwner->GetName();
 			FTransform newSaveTransform;
@@ -91,7 +91,7 @@ void ATUTGamemodeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 			mySave->SaveTransformsByName.FindOrAdd(saveOwner->GetName(), newSaveTransform);
 		}
 
-		UGameplayStatics::SaveGameToSlot(mySave, TEXT("SINGLEPLAYER"), 0);
+		UGameplayStatics::SaveGameToSlot(mySave, TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
 	}
 
 
