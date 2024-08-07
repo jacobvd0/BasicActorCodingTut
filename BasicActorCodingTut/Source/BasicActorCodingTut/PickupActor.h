@@ -34,4 +34,6 @@ public:
 private:
 	UPROPERTY(VisibleDefaultsOnly);
 	class UStaticMeshComponent* PickupMesh;
+
+	bool canBePickedUp = true;
 };

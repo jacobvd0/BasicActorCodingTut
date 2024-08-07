@@ -33,6 +33,8 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 	ACharacter* player = Cast<ACharacter>(OtherActor);
 
 	if (IsValid(player)) {
+		if (canBePickedUp == false) { return; }
+		canBePickedUp = false;
 		//Destroy();
 
 		// Hide the actor and TP it under the map, this so it is not spawned back if the player loads their save again (it instead spawns under the map so they can't get to it)
