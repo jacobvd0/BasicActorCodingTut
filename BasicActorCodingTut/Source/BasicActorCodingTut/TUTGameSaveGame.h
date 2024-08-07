@@ -16,7 +16,7 @@ class BASICACTORCODINGTUT_API UTUTGameSaveGame : public USaveGame
 	
 public:
 	UPROPERTY()
-	int Highscore = 0;
+	int Score = 0;
 
 	UPROPERTY()
 	FVector LastPlayerLocation = FVector::ZeroVector;

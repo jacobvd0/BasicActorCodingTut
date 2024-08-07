@@ -25,6 +25,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float RotationSpeed = 90.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int ScoreToAdd = 1;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

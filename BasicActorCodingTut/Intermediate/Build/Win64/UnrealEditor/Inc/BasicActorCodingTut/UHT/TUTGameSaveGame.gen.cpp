@@ -37,7 +37,7 @@ struct Z_Construct_UClass_UTUTGameSaveGame_Statics
 		{ "IncludePath", "TUTGameSaveGame.h" },
 		{ "ModuleRelativePath", "TUTGameSaveGame.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Highscore_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Score_MetaData[] = {
 		{ "ModuleRelativePath", "TUTGameSaveGame.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LastPlayerLocation_MetaData[] = {
@@ -47,7 +47,7 @@ struct Z_Construct_UClass_UTUTGameSaveGame_Statics
 		{ "ModuleRelativePath", "TUTGameSaveGame.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_Highscore;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Score;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_LastPlayerLocation;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_SaveTransformsByName_ValueProp;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_SaveTransformsByName_Key_KeyProp;
@@ -59,13 +59,13 @@ struct Z_Construct_UClass_UTUTGameSaveGame_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_Highscore = { "Highscore", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTUTGameSaveGame, Highscore), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Highscore_MetaData), NewProp_Highscore_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_Score = { "Score", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTUTGameSaveGame, Score), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Score_MetaData), NewProp_Score_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_LastPlayerLocation = { "LastPlayerLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTUTGameSaveGame, LastPlayerLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LastPlayerLocation_MetaData), NewProp_LastPlayerLocation_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_SaveTransformsByName_ValueProp = { "SaveTransformsByName", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_SaveTransformsByName_Key_KeyProp = { "SaveTransformsByName_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_SaveTransformsByName = { "SaveTransformsByName", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTUTGameSaveGame, SaveTransformsByName), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveTransformsByName_MetaData), NewProp_SaveTransformsByName_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UTUTGameSaveGame_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_Highscore,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_Score,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_LastPlayerLocation,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_SaveTransformsByName_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTUTGameSaveGame_Statics::NewProp_SaveTransformsByName_Key_KeyProp,
@@ -113,10 +113,10 @@ UTUTGameSaveGame::~UTUTGameSaveGame() {}
 struct Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGameSaveGame_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTUTGameSaveGame, UTUTGameSaveGame::StaticClass, TEXT("UTUTGameSaveGame"), &Z_Registration_Info_UClass_UTUTGameSaveGame, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTUTGameSaveGame), 1716977261U) },
+		{ Z_Construct_UClass_UTUTGameSaveGame, UTUTGameSaveGame::StaticClass, TEXT("UTUTGameSaveGame"), &Z_Registration_Info_UClass_UTUTGameSaveGame, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTUTGameSaveGame), 1774935258U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGameSaveGame_h_3981929486(TEXT("/Script/BasicActorCodingTut"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGameSaveGame_h_3570155350(TEXT("/Script/BasicActorCodingTut"),
 	Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGameSaveGame_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGameSaveGame_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

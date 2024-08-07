@@ -37,6 +37,10 @@ struct Z_Construct_UClass_APickupActor_Statics
 		{ "Category", "PickupActor" },
 		{ "ModuleRelativePath", "PickupActor.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ScoreToAdd_MetaData[] = {
+		{ "Category", "PickupActor" },
+		{ "ModuleRelativePath", "PickupActor.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PickupMesh_MetaData[] = {
 		{ "Category", "PickupActor" },
 		{ "EditInline", "true" },
@@ -44,6 +48,7 @@ struct Z_Construct_UClass_APickupActor_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_RotationSpeed;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ScoreToAdd;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PickupMesh;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
@@ -53,9 +58,11 @@ struct Z_Construct_UClass_APickupActor_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_RotationSpeed = { "RotationSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APickupActor, RotationSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotationSpeed_MetaData), NewProp_RotationSpeed_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_ScoreToAdd = { "ScoreToAdd", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APickupActor, ScoreToAdd), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoreToAdd_MetaData), NewProp_ScoreToAdd_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_PickupMesh = { "PickupMesh", nullptr, (EPropertyFlags)0x00400000000b0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APickupActor, PickupMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PickupMesh_MetaData), NewProp_PickupMesh_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickupActor_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_RotationSpeed,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_ScoreToAdd,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_PickupMesh,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::PropPointers) < 2048);
@@ -99,10 +106,10 @@ APickupActor::~APickupActor() {}
 struct Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_PickupActor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APickupActor, APickupActor::StaticClass, TEXT("APickupActor"), &Z_Registration_Info_UClass_APickupActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APickupActor), 2560185860U) },
+		{ Z_Construct_UClass_APickupActor, APickupActor::StaticClass, TEXT("APickupActor"), &Z_Registration_Info_UClass_APickupActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APickupActor), 234103189U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_PickupActor_h_1992041761(TEXT("/Script/BasicActorCodingTut"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_PickupActor_h_3682597318(TEXT("/Script/BasicActorCodingTut"),
 	Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_PickupActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_PickupActor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

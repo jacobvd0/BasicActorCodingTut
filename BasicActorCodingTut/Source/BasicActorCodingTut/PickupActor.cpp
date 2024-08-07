@@ -4,6 +4,8 @@
 #include "PickupActor.h"
 #include "Components/StaticMeshComponent.h" // for UStaticMeshComponent
 #include "GameFramework/Character.h"
+#include "TUTGamemodeBase.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APickupActor::APickupActor()
@@ -32,7 +34,16 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 
 	if (IsValid(player)) {
 		//Destroy();
+
+		// Hide the actor and TP it under the map, this so it is not spawned back if the player loads their save again (it instead spawns under the map so they can't get to it)
 		SetActorHiddenInGame(true);
+		FVector NewLoc = FVector(0.0f, -100.0f, 0.0f);
+		SetActorLocation(NewLoc);
+
+		
+		ATUTGamemodeBase* GameMode = Cast<ATUTGamemodeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+
+		GameMode->AddScore(ScoreToAdd);
 	}
 }
 

@@ -1,0 +1,21 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/XJ/5FGHAOG33I0QODALIVYP5Y.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/QX/HCYBEU2G0OKCLMYMPN4GIW.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/4I/449L56ZNEAB10A0VTWNV7A.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HZ/Z4SKG3R62NVQQA9F9EWMJ1.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/BH/FBB1GT7YY14B0M4GSHYO4H.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/1Q/5MNDLPYR61ZANIDU3G6CJ6.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/DB/87C9V7BSJFV0UFQP9AVHS3.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/NA/R0VKXSUNL7EU10Q8FHS939.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/M4/3BMELSZAX924C3G98KNOUU.uasset",
+				"C:/Users/s221150/Documents/BasicActorCodingTut/BasicActorCodingTut/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/PB/T3Z0WAM6M85WJ1XHLF5EAB.uasset"
+			]
+		}
+	]
+}

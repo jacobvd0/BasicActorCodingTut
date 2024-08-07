@@ -15,13 +15,13 @@ class BASICACTORCODINGTUT_API ATUTGamemodeBase : public AGameModeBase
 	GENERATED_BODY()
 	
 	float TimeElapsed = 0.0f;
-	int Highscore = 0;
+	int Score = 0;
 	FVector LastPlayerLocation = FVector::ZeroVector;
 
 public:
 	ATUTGamemodeBase();
 
-	void ReportScore(int newScore);
+	void AddScore(int scoreToAdd);
 	FVector GetLastSavedPlayerLocation();
 
 
