@@ -17,6 +17,7 @@ class BASICACTORCODINGTUT_API ATUTGamemodeBase : public AGameModeBase
 	float TimeElapsed = 0.0f;
 	int Score = 0;
 	FVector LastPlayerLocation = FVector::ZeroVector;
+	bool skipSave = false;
 
 public:
 	ATUTGamemodeBase();
@@ -30,4 +31,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+	UPROPERTY()
+	FKey resetBtn = EKeys::X;
 }; 

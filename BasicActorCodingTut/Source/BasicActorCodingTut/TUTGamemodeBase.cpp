@@ -64,11 +64,28 @@ void ATUTGamemodeBase::BeginPlay()
 
 void ATUTGamemodeBase::Tick(float DeltaTime)
 {
+	GEngine->AddOnScreenDebugMessage(3, 15.0f, FColor::Yellow, TEXT("TEST"));
+	for (TActorIterator<APlayerController> plr(GetWorld()); plr; ++plr) {
+		if (!IsValid(*plr)) { return; }
+		
+		if (plr->IsInputKeyDown(resetBtn)) {
+			skipSave = true;
+			UGameplayStatics::DeleteGameInSlot(TEXT("SINGLEPLAYER"), 0);
+			UGameplayStatics::DeleteGameInSlot(TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
+			GEngine->AddOnScreenDebugMessage(2, 15.0f, FColor::Yellow, TEXT("Saves Deleted"));
+		}
+		break;
+	}
 	Super::Tick(DeltaTime);
 }
 
 void ATUTGamemodeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
+	if (skipSave) {
+		Super::EndPlay(EndPlayReason);
+		return;
+	}
+
 	USaveGame* newPlrSave = UGameplayStatics::CreateSaveGameObject(UTUTGameSaveGame::StaticClass());
 	UTUTGameSaveGame* plrSave = Cast<UTUTGameSaveGame>(newPlrSave);
 	if (IsValid(plrSave)) {

@@ -6,6 +6,7 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "BasicActorCodingTut/TUTGamemodeBase.h"
+#include "Runtime/InputCore/Classes/InputCoreTypes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTUTGamemodeBase() {}
 
@@ -13,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeTUTGamemodeBase() {}
 BASICACTORCODINGTUT_API UClass* Z_Construct_UClass_ATUTGamemodeBase();
 BASICACTORCODINGTUT_API UClass* Z_Construct_UClass_ATUTGamemodeBase_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
+INPUTCORE_API UScriptStruct* Z_Construct_UScriptStruct_FKey();
 UPackage* Z_Construct_UPackage__Script_BasicActorCodingTut();
 // End Cross Module References
 
@@ -37,13 +39,23 @@ struct Z_Construct_UClass_ATUTGamemodeBase_Statics
 		{ "ModuleRelativePath", "TUTGamemodeBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_resetBtn_MetaData[] = {
+		{ "ModuleRelativePath", "TUTGamemodeBase.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_resetBtn;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATUTGamemodeBase>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_resetBtn = { "resetBtn", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATUTGamemodeBase, resetBtn), Z_Construct_UScriptStruct_FKey, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_resetBtn_MetaData), NewProp_resetBtn_MetaData) }; // 658672854
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_resetBtn,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ATUTGamemodeBase_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AGameModeBase,
 	(UObject* (*)())Z_Construct_UPackage__Script_BasicActorCodingTut,
@@ -55,11 +67,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ATUTGamemodeBase_Static
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	nullptr,
+	Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	0,
+	UE_ARRAY_COUNT(Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers),
 	0,
 	0x009002ACu,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATUTGamemodeBase_Statics::Class_MetaDataParams), Z_Construct_UClass_ATUTGamemodeBase_Statics::Class_MetaDataParams)
@@ -84,10 +96,10 @@ ATUTGamemodeBase::~ATUTGamemodeBase() {}
 struct Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATUTGamemodeBase, ATUTGamemodeBase::StaticClass, TEXT("ATUTGamemodeBase"), &Z_Registration_Info_UClass_ATUTGamemodeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATUTGamemodeBase), 3075188710U) },
+		{ Z_Construct_UClass_ATUTGamemodeBase, ATUTGamemodeBase::StaticClass, TEXT("ATUTGamemodeBase"), &Z_Registration_Info_UClass_ATUTGamemodeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATUTGamemodeBase), 4115609864U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_3548824847(TEXT("/Script/BasicActorCodingTut"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_681262377(TEXT("/Script/BasicActorCodingTut"),
 	Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
