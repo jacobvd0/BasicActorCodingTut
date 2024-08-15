@@ -15,7 +15,7 @@ ATUTGamemodeBase::ATUTGamemodeBase()
 
 void ATUTGamemodeBase::AddScore(int scoreToAdd)
 {
-	GEngine->AddOnScreenDebugMessage(1, 15.0f, FColor::Yellow, FString::Printf(TEXT("%i (+%i)"), Score, scoreToAdd));
+	GEngine->AddOnScreenDebugMessage(1, 15.0f, FColor::Yellow, FString::Printf(TEXT("%i (+%i)"), Score + scoreToAdd, scoreToAdd));
 
 	Score += scoreToAdd;
 }
