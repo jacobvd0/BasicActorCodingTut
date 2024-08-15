@@ -10,6 +10,7 @@
 
 ATUTGamemodeBase::ATUTGamemodeBase()
 {
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 void ATUTGamemodeBase::AddScore(int scoreToAdd)
@@ -64,7 +65,6 @@ void ATUTGamemodeBase::BeginPlay()
 
 void ATUTGamemodeBase::Tick(float DeltaTime)
 {
-	GEngine->AddOnScreenDebugMessage(3, 15.0f, FColor::Yellow, TEXT("TEST"));
 	for (TActorIterator<APlayerController> plr(GetWorld()); plr; ++plr) {
 		if (!IsValid(*plr)) { return; }
 		
@@ -73,6 +73,8 @@ void ATUTGamemodeBase::Tick(float DeltaTime)
 			UGameplayStatics::DeleteGameInSlot(TEXT("SINGLEPLAYER"), 0);
 			UGameplayStatics::DeleteGameInSlot(TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
 			GEngine->AddOnScreenDebugMessage(2, 15.0f, FColor::Yellow, TEXT("Saves Deleted"));
+
+			UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 		}
 		break;
 	}
