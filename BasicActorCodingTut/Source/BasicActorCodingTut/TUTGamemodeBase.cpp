@@ -25,6 +25,11 @@ FVector ATUTGamemodeBase::GetLastSavedPlayerLocation()
 	return LastPlayerLocation;
 }
 
+FString ATUTGamemodeBase::CreateSaveFilePath(const FString& saveName)
+{
+	return FPaths::ProjectSavedDir() + "SaveJson/" + saveName + TEXT(".json.sav");
+}
+
 void ATUTGamemodeBase::BeginPlay()
 {
 	USaveGame* plrSaveLoad = UGameplayStatics::LoadGameFromSlot(TEXT("SINGLEPLAYER"), 0);

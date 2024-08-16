@@ -25,6 +25,8 @@ public:
 	void AddScore(int scoreToAdd);
 	FVector GetLastSavedPlayerLocation();
 
+	FString CreateSaveFilePath(const FString& saveName);
+
 
 	virtual void BeginPlay() override;
 
