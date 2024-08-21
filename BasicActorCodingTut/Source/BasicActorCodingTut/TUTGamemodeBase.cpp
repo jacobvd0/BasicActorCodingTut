@@ -30,19 +30,122 @@ FString ATUTGamemodeBase::CreateSaveFilePath(const FString& saveName)
 	return FPaths::ProjectSavedDir() + "SaveJson/" + saveName + TEXT(".json.sav");
 }
 
-void ATUTGamemodeBase::BeginPlay()
+bool ATUTGamemodeBase::SaveGameToJSONFile(const FString& saveName)
 {
-	USaveGame* plrSaveLoad = UGameplayStatics::LoadGameFromSlot(TEXT("SINGLEPLAYER"), 0);
+	FString saveGamePath = CreateSaveFilePath(saveName);
+
+	TSharedPtr<FJsonObject> saveJson = MakeShareable(new FJsonObject());
+
+	// Saves the player's score
+	saveJson->SetNumberField(TEXT("Score"), Score);
+
+	// Gets the players location then saves it
+	for (TActorIterator<ATUTGameCharacter> player(GetWorld()); player; ++player) {
+		if (IsValid(*player)) {
+			saveJson->SetStringField(TEXT("LastPlayerLocation"), player->GetActorLocation().ToString());
+			break;
+		}
+	}
+	
+
+	TArray<TSharedPtr<FJsonValue>> jsonTransformValues;
+	TMap<FString, FTransform> SaveTransformsByName;
+	for (auto& transformPair : SaveTransformsByName) {
+		TSharedPtr<FJsonObject> saveTransform = MakeShareable(new FJsonObject());
+
+		saveTransform->SetStringField(TEXT("Name"), transformPair.Key);
+		saveTransform->SetStringField(TEXT("Transform"), transformPair.Value.ToString());
+
+		jsonTransformValues.Add(MakeShareable(new FJsonValueObject(saveTransform)));
+	}
+	saveJson->SetArrayField(TEXT("SaveTransformsByName"), jsonTransformValues);
+
+	FString contents;
+	TSharedRef<TJsonWriter<>> saveWriter = TJsonWriterFactory<>::Create(&contents);
+	FJsonSerializer::Serialize(saveJson.ToSharedRef(), saveWriter);
+	
+	bool result = FFileHelper::SaveStringToFile(contents, *saveGamePath);
+	return result;
+}
+
+bool ATUTGamemodeBase::SaveGame(const FString& saveName)
+{
+	USaveGame* newPlrSave = UGameplayStatics::CreateSaveGameObject(UTUTGameSaveGame::StaticClass());
+	UTUTGameSaveGame* plrSave = Cast<UTUTGameSaveGame>(newPlrSave);
+
+
+	if (IsValid(plrSave)) {
+		plrSave->Score = Score;
+		UGameplayStatics::SaveGameToSlot(plrSave, saveName, 0);
+	}
+	else { return false; }
+
+
+	USaveGame* newSave = UGameplayStatics::CreateSaveGameObject(UTUTGameSaveGame::StaticClass());
+	UTUTGameSaveGame* worldSave = Cast<UTUTGameSaveGame>(newSave);
+
+	if (IsValid(worldSave)) {
+
+		for (TActorIterator<ATUTGameCharacter> player(GetWorld()); player; ++player) {
+			if (IsValid(*player)) {
+				worldSave->LastPlayerLocation = player->GetActorLocation();
+				break;
+			}
+		}
+
+
+		for (TObjectIterator<UGameSaveTransform> savedTransforms; savedTransforms; ++savedTransforms) {
+			if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
+
+			AActor* saveOwner = savedTransforms->GetOwner();
+			EWorldType::Type ownerWorldType = saveOwner->GetWorld()->WorldType;
+
+			if (!(ownerWorldType == EWorldType::PIE || ownerWorldType == EWorldType::Game)) { continue; }
+
+			FString ownerName = saveOwner->GetName();
+			FTransform newSaveTransform;
+			savedTransforms->SaveTransform(newSaveTransform);
+
+			worldSave->SaveTransformsByName.FindOrAdd(saveOwner->GetName(), newSaveTransform);
+		}
+		
+		UGameplayStatics::SaveGameToSlot(worldSave, saveName + TEXT("-" + GetWorld()->GetName()), 0);
+		return true;
+	}
+	else { return false; }
+
+	return true;
+}
+
+bool ATUTGamemodeBase::LoadGameFromJSONFile(const FString& saveName)
+{
+	FString saveGamePath = CreateSaveFilePath(saveName);
+
+	FString contents;
+	bool loadSuccess = FFileHelper::LoadFileToString(contents, *saveGamePath);
+	
+	if (!loadSuccess) return false;
+
+	TSharedPtr<FJsonObject> saveJson = MakeShareable(new FJsonObject());
+	TSharedPtr<TJsonReader<>> saveReader = TJsonReaderFactory<>::Create(contents);
+	 
+	if (FJsonSerializer::Deserialize(saveReader, saveJson) && saveJson.IsValid()) {
+
+	}
+}
+
+bool ATUTGamemodeBase::LoadGame(const FString& saveName)
+{
+	USaveGame* plrSaveLoad = UGameplayStatics::LoadGameFromSlot(saveName, 0);
 	UTUTGameSaveGame* plrSave = Cast<UTUTGameSaveGame>(plrSaveLoad);
 	if (IsValid(plrSave)) {
 		Score = plrSave->Score;
-	}
+	} else return false;
 
-	USaveGame* loadSave = UGameplayStatics::LoadGameFromSlot(TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
+	USaveGame* loadSave = UGameplayStatics::LoadGameFromSlot(saveName + TEXT("-" + GetWorld()->GetName()), 0);
 	UTUTGameSaveGame* worldSave = Cast<UTUTGameSaveGame>(loadSave);
 
 	if (IsValid(worldSave)) {
-		//Highscore = mySave->Highscore;
 		LastPlayerLocation = worldSave->LastPlayerLocation;
 
 
@@ -63,7 +166,17 @@ void ATUTGamemodeBase::BeginPlay()
 				}
 			}
 		}
+		return true;
 	}
+	return false;
+}
+
+void ATUTGamemodeBase::BeginPlay()
+{
+	if (UseJSONSaveGame)
+		LoadGameFromJSONFile(SaveName);
+	else
+		LoadGame(SaveName);
 
 	Super::BeginPlay();
 }
@@ -93,44 +206,15 @@ void ATUTGamemodeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		return;
 	}
 
-	USaveGame* newPlrSave = UGameplayStatics::CreateSaveGameObject(UTUTGameSaveGame::StaticClass());
-	UTUTGameSaveGame* plrSave = Cast<UTUTGameSaveGame>(newPlrSave);
-	if (IsValid(plrSave)) {
-		plrSave->Score = Score;
-		UGameplayStatics::SaveGameToSlot(plrSave, TEXT("SINGLEPLAYER"), 0);
-	}
+	
 
+	if (UseJSONSaveGame)
+		SaveGameToJSONFile(SaveName);
+	else
+		SaveGame(SaveName);
 
-	USaveGame* newSave = UGameplayStatics::CreateSaveGameObject(UTUTGameSaveGame::StaticClass());
-	UTUTGameSaveGame* worldSave = Cast<UTUTGameSaveGame>(newSave);
+	//SaveGameToJSONFile(worldSave, "testSave");
 
-	if (IsValid(worldSave)) {
-		//mySave->Highscore = Highscore;
-
-		for (TActorIterator<ATUTGameCharacter> player(GetWorld()); player; ++player) {
-			if (!IsValid(*player)) { return; }
-			worldSave->LastPlayerLocation = player->GetActorLocation();
-			break;
-		}
-
-
-		for (TObjectIterator<UGameSaveTransform> savedTransforms; savedTransforms; ++savedTransforms) {
-			if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
-
-			AActor* saveOwner = savedTransforms->GetOwner();
-			EWorldType::Type ownerWorldType = saveOwner->GetWorld()->WorldType;
-
-			if (!(ownerWorldType == EWorldType::PIE || ownerWorldType == EWorldType::Game)) { continue; }
-
-			FString ownerName = saveOwner->GetName();
-			FTransform newSaveTransform;
-			savedTransforms->SaveTransform(newSaveTransform);
-
-			worldSave->SaveTransformsByName.FindOrAdd(saveOwner->GetName(), newSaveTransform);
-		}
-
-		UGameplayStatics::SaveGameToSlot(worldSave, TEXT("SINGLEPLAYER-" + GetWorld()->GetName()), 0);
-	}
 
 
 	Super::EndPlay(EndPlayReason);

@@ -42,8 +42,19 @@ struct Z_Construct_UClass_ATUTGamemodeBase_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_resetBtn_MetaData[] = {
 		{ "ModuleRelativePath", "TUTGamemodeBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UseJSONSaveGame_MetaData[] = {
+		{ "Category", "TUTGamemodeBase" },
+		{ "ModuleRelativePath", "TUTGamemodeBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SaveName_MetaData[] = {
+		{ "Category", "TUTGamemodeBase" },
+		{ "ModuleRelativePath", "TUTGamemodeBase.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_resetBtn;
+	static void NewProp_UseJSONSaveGame_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_UseJSONSaveGame;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_SaveName;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -52,8 +63,16 @@ struct Z_Construct_UClass_ATUTGamemodeBase_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_resetBtn = { "resetBtn", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATUTGamemodeBase, resetBtn), Z_Construct_UScriptStruct_FKey, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_resetBtn_MetaData), NewProp_resetBtn_MetaData) }; // 658672854
+void Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_UseJSONSaveGame_SetBit(void* Obj)
+{
+	((ATUTGamemodeBase*)Obj)->UseJSONSaveGame = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_UseJSONSaveGame = { "UseJSONSaveGame", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ATUTGamemodeBase), &Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_UseJSONSaveGame_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UseJSONSaveGame_MetaData), NewProp_UseJSONSaveGame_MetaData) };
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_SaveName = { "SaveName", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATUTGamemodeBase, SaveName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveName_MetaData), NewProp_SaveName_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_resetBtn,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_UseJSONSaveGame,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATUTGamemodeBase_Statics::NewProp_SaveName,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATUTGamemodeBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ATUTGamemodeBase_Statics::DependentSingletons[])() = {
@@ -96,10 +115,10 @@ ATUTGamemodeBase::~ATUTGamemodeBase() {}
 struct Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATUTGamemodeBase, ATUTGamemodeBase::StaticClass, TEXT("ATUTGamemodeBase"), &Z_Registration_Info_UClass_ATUTGamemodeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATUTGamemodeBase), 4115609864U) },
+		{ Z_Construct_UClass_ATUTGamemodeBase, ATUTGamemodeBase::StaticClass, TEXT("ATUTGamemodeBase"), &Z_Registration_Info_UClass_ATUTGamemodeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATUTGamemodeBase), 3473409363U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_681262377(TEXT("/Script/BasicActorCodingTut"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_224002927(TEXT("/Script/BasicActorCodingTut"),
 	Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_s221150_Documents_BasicActorCodingTut_BasicActorCodingTut_Source_BasicActorCodingTut_TUTGamemodeBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

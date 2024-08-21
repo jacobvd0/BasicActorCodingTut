@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "TUTGamemodeBase.generated.h"
+//#include "TUTGameSaveGame.h"
 
 /**
  * 
@@ -27,6 +28,11 @@ public:
 
 	FString CreateSaveFilePath(const FString& saveName);
 
+	bool SaveGameToJSONFile(const FString& saveName);
+	bool SaveGame(const FString& saveName);
+
+	bool LoadGameFromJSONFile(const FString& saveName);
+	bool LoadGame(const FString& saveName);
 
 	virtual void BeginPlay() override;
 
@@ -36,4 +42,10 @@ public:
 
 	UPROPERTY()
 	FKey resetBtn = EKeys::X;
+
+protected:
+	UPROPERTY(EditDefaultsOnly)
+	bool UseJSONSaveGame = true;
+	UPROPERTY(EditDefaultsOnly)
+	FString SaveName = "SINGLEPLAYER";
 }; 
