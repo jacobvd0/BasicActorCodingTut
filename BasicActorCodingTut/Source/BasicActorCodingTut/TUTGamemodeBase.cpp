@@ -30,6 +30,7 @@ FString ATUTGamemodeBase::CreateSaveFilePath(const FString& saveName)
 	return FPaths::ProjectSavedDir() + "SaveJson/" + saveName + TEXT(".json.sav");
 }
 
+// Saves the game to SaveJson/SAVENAME.json.sav
 bool ATUTGamemodeBase::SaveGameToJSONFile(const FString& saveName)
 {
 	FString saveGamePath = CreateSaveFilePath(saveName);
@@ -47,10 +48,10 @@ bool ATUTGamemodeBase::SaveGameToJSONFile(const FString& saveName)
 		}
 	}
 	
-
 	TArray<TSharedPtr<FJsonValue>> jsonTransformValues;
 	TMap<FString, FTransform> SaveTransformsByName;
 	
+	// Loops through all objects with the usavegame transform on them and adds them to the TMap
 	for (TObjectIterator<UGameSaveTransform> savedTransforms; savedTransforms; ++savedTransforms) {
 		if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
 
@@ -66,6 +67,7 @@ bool ATUTGamemodeBase::SaveGameToJSONFile(const FString& saveName)
 		SaveTransformsByName.FindOrAdd(saveOwner->GetName(), newSaveTransform);
 	}
 
+	// Adds all transforms ion the TMap to JSON object
 	for (auto& transformPair : SaveTransformsByName) {
 		TSharedPtr<FJsonObject> saveTransform = MakeShareable(new FJsonObject());
 
@@ -76,11 +78,12 @@ bool ATUTGamemodeBase::SaveGameToJSONFile(const FString& saveName)
 	}
 	saveJson->SetArrayField(TEXT("SaveTransformsByName"), jsonTransformValues);
 
+	// Writes the save file
 	FString contents;
 	TSharedRef<TJsonWriter<>> saveWriter = TJsonWriterFactory<>::Create(&contents);
 	FJsonSerializer::Serialize(saveJson.ToSharedRef(), saveWriter);
-	
 	bool result = FFileHelper::SaveStringToFile(contents, *saveGamePath);
+
 	return result;
 }
 
@@ -129,8 +132,6 @@ bool ATUTGamemodeBase::SaveGame(const FString& saveName)
 		return true;
 	}
 	else return false;
-
-	//return true;
 }
 
 bool ATUTGamemodeBase::LoadGameFromJSONFile(const FString& saveName)
@@ -143,9 +144,9 @@ bool ATUTGamemodeBase::LoadGameFromJSONFile(const FString& saveName)
 	if (!loadSuccess) return false;
 
 	TSharedPtr<FJsonObject> saveJson = MakeShareable(new FJsonObject());
-	//TSharedPtr<FJsonObject> saveJson;
 	TSharedRef<TJsonReader<>> saveReader = TJsonReaderFactory<>::Create(contents);
 	
+	// Loads the player's score and location
 	if (FJsonSerializer::Deserialize(saveReader, saveJson) && saveJson.IsValid()) {
 		saveJson->TryGetNumberField(TEXT("Score"), Score);
 		FString lastPlayerLoc;
@@ -153,11 +154,13 @@ bool ATUTGamemodeBase::LoadGameFromJSONFile(const FString& saveName)
 		LastPlayerLocation.InitFromString(lastPlayerLoc);
 	}
 
+	
 	const TArray<TSharedPtr<FJsonValue>>* saveTransforms;
 	bool hasSaveTransforms = saveJson->TryGetArrayField(TEXT("SaveTransformsByName"), saveTransforms);
 	if (hasSaveTransforms) {
 		TMap<FString, FTransform> SaveTransformsByName;
 
+		// Loads all saved transforms and adds them to a TArray
 		for (auto& transformPair : *saveTransforms) {
 			TSharedPtr<FJsonObject> saveTransform = transformPair->AsObject();
 			
@@ -173,7 +176,7 @@ bool ATUTGamemodeBase::LoadGameFromJSONFile(const FString& saveName)
 			SaveTransformsByName.Add(transformName, transformParsed);
 		}
 
-
+		// Checks all transforms that can be saved to see if they are in the TArray, if so their data is loaded
 		for (TObjectIterator<UGameSaveTransform> savedTransforms; savedTransforms; ++savedTransforms) {
 			if (!IsValid(*savedTransforms) || savedTransforms->GetWorld() != GetWorld()) { continue; }
 
